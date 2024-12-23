@@ -6,7 +6,11 @@ This is a fullstack website for tracking drivers and packages delivery. This web
 npm install --force
 ng build
 ```
+Notice that the Google AI feature would requires API key. Simply get the API key and create an .env file inside ass3Ang folder. The format should be like this.
+```
+GEMINI_API_KEY=your_api_key
+TRANSLATE_API_KEY=your_api_key
+```
 
 # Documentation
 For detail documentation, click the 3 pdf files in the root folder.
-

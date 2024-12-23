@@ -1,0 +1,56 @@
+<main>
+    <div class="album py-5">
+      <div class="container">
+        <h3 class="my-2">Update Driver Form</h3>
+        <div class="row row-cols-1 row-cols-sm-2 g-3">
+          <div class="col">
+            <div class="card shadow-sm">
+              <div class="card-body">
+                <form (ngSubmit)="onSubmit()" #driverForm="ngForm">
+                
+                    <div class="mb-3">
+                        <label for="driver_id" class="form-label">Driver ID</label>
+                        <select name="driver_id" class="form-select" id="driver_id"
+                            [(ngModel)]="selectedDriver.id" required>
+                            @for (driver of driversList; track driver.driver_id) {
+                                <option [value]="driver._id">{{ driver.driver_id }}</option>
+                            }
+                        </select>
+                    </div>
+                  <div class="mb-3">
+                    <label for="driver_department" class="form-label">Driver Department</label>
+                    <select
+                      id="driver_department"
+                      name="driver_department"
+                      class="form-select"
+                      [(ngModel)]="selectedDriver.driver_department"
+                      required
+                    >
+                      <option value="food">food</option>
+                      <option value="furniture">furniture</option>
+                      <option value="electronic">electronic</option>
+                    </select>
+                  </div>
+  
+                  <div class="mb-3">
+                    <label for="driver_licence" class="form-label">Driver Licence</label>
+                    <input
+                      type="text"
+                      name="driver_licence"
+                      class="form-control"
+                      id="driver_licence"
+                      placeholder="Enter driver licence"
+                      [(ngModel)]="selectedDriver.driver_licence"
+                      required
+                    />
+                  </div>
+                  <button type="submit" class="btn btn-primary">Update</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  

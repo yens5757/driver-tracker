@@ -1,0 +1,86 @@
+<main>
+    <div class="album py-5">
+      <div class="container">
+        <h3 class="my-2">Add New Driver Form</h3>
+        <div class="row row-cols-1 row-cols-sm-2 g-3">
+          <div class="col">
+            <div class="card shadow-sm">
+              <div class="card-body">
+                <form (ngSubmit)="onSubmit()" #driverForm="ngForm">
+                  <div class="mb-3">
+                    <label for="driver_name" class="form-label">Driver Name</label>
+                    <input
+                      type="text"
+                      name="driver_name"
+                      class="form-control"
+                      id="driver_name"
+                      placeholder="Enter driver name"
+                      [(ngModel)]="driver.driver_name"
+                      required
+                    />
+                  </div>
+  
+                  <div class="mb-3">
+                    <label for="driver_department" class="form-label">Driver Department</label>
+                    <select
+                      id="driver_department"
+                      name="driver_department"
+                      class="form-select"
+                      [(ngModel)]="driver.driver_department"
+                      required
+                    >
+                      <option value="food">food</option>
+                      <option value="furniture">furniture</option>
+                      <option value="electronic">electronic</option>
+                    </select>
+                  </div>
+  
+                  <div class="mb-3">
+                    <label for="driver_licence" class="form-label">Driver Licence</label>
+                    <input
+                      type="text"
+                      name="driver_licence"
+                      class="form-control"
+                      id="driver_licence"
+                      placeholder="Enter driver licence"
+                      [(ngModel)]="driver.driver_licence"
+                      required
+                    />
+                  </div>
+  
+                  <div class="mb-3">
+                    <label class="form-label">Is Driver Active</label>
+                    <div class="form-check">
+                      <input
+                        type="radio"
+                        name="driver_isActive"
+                        value="true"
+                        class="form-check-input"
+                        id="driver_isActive1"
+                        [(ngModel)]="driver_isActive"
+                      />
+                      <label class="form-check-label" for="driver_isActive1">Yes</label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        type="radio"
+                        name="driver_isActive"
+                        value="false"
+                        class="form-check-input"
+                        id="driver_isActive2"
+                        [(ngModel)]="driver_isActive"
+                      />
+                      <label class="form-check-label" for="driver_isActive2">No</label>
+                    </div>
+                  </div>
+  
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  

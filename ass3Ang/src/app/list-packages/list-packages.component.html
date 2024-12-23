@@ -1,0 +1,63 @@
+<main>
+    <div class="container mt-4">
+      <h3 class="my-2">List of Packages</h3>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Package ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Weight</th>
+            <th scope="col">Destination</th>
+            <th scope="col">Description</th>
+            <th scope="col">Created At</th>
+            <th scope="col">Is Allocated</th>
+            <th scope="col">Driver ID</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (package of packageDb; track package._id; let i = $index) {
+            <tr>
+              <th scope="row">{{ i + 1 }}</th>
+              <td>{{ package.package_id }}</td>
+              <td>{{ package.package_title }}</td>
+              <td>{{ package.package_weight | weight  }}</td>
+              <td>{{ package.package_destination }}</td>
+              <td>{{ package.description }}</td>
+              <td>{{ package.createdAt | date:'medium' }}</td>
+              <td>{{ package.isAllocated ? 'Yes' : 'No' }}</td>
+              <td>{{ package.driver_id.driver_id }}</td>
+              <td>
+                <button (click)="showDriver(package.driver_id)" class="btn btn-primary btn-sm">Driver Info</button>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+      @if (driverDb == null) {
+      }
+      @else {
+        <h3 class="my-2">Driver Info</h3>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Driver ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Department</th>
+              <th scope="col">Licence</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr>
+                <td>{{ driverDb.driver_id }}</td>
+                <td>{{ driverDb.driver_name | ass3strsub }}</td>
+                <td>{{ driverDb.driver_department }}</td>
+                <td>{{ driverDb.driver_licence }}</td>
+              </tr>
+          </tbody>
+        </table>
+      }
+      <a routerLink="/" class="btn btn-primary">Back to Home</a>
+    </div>
+  </main>
+  

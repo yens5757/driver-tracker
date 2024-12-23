@@ -1,0 +1,35 @@
+<main>
+    <div class="album py-5">
+        <div class="container">
+
+            <h3 class="my-2">Update Package Form</h3>
+
+            <div class="row row-cols-1 row-cols-sm-2 g-3">
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <form (ngSubmit)="onSubmit()" #packageForm="ngForm">
+                                <div class="mb-3">
+                                    <label for="package_id" class="form-label">Package ID</label>
+                                    <select name="package_id" class="form-select" id="package_id"
+                                        [(ngModel)]="selectedPackage.id" required>
+                                        @for (package of packagesList; track package.package_id) {
+                                            <option [value]="package._id">{{ package.package_id }}</option>
+                                        }
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="package_destination" class="form-label">Package Destination</label>
+                                    <input type="text" name="package_destination" class="form-control"
+                                        id="package_destination" placeholder="Enter package destination"
+                                        [(ngModel)]="selectedPackage.package_destination" required />
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

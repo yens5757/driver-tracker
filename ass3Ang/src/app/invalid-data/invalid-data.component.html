@@ -1,0 +1,8 @@
+<div class="album py-5">
+  <div class="container">
+    <h1>Data is invalid. The reason is:</h1>
+    @for(problem of errorMessages;track $index) {
+      <li>{{problem}}</li>
+    }
+  </div>
+</div>

@@ -1,0 +1,47 @@
+<main>
+    <div class="container mt-4">
+      <h3 class="my-2">List of Packages</h3>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Package ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Weight</th>
+            <th scope="col">Destination</th>
+            <th scope="col">Description</th>
+            <th scope="col">Created At</th>
+            <th scope="col">Is Allocated</th>
+            <th scope="col">Driver ID</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (package of packageDb; track package._id; let i = $index) {
+            <tr>
+              <th scope="row">{{ i + 1 }}</th>
+              <td>{{ package.package_id }}</td>
+              <td>{{ package.package_title }}</td>
+              <td>{{ package.package_weight | weight  }}</td>
+              <td>{{ package.package_destination }}</td>
+              <td>{{ package.description }}</td>
+              <td>{{ package.createdAt | date:'medium' }}</td>
+              <td>{{ package.isAllocated ? 'Yes' : 'No' }}</td>
+              <td>{{ package.driver_id.driver_id }}</td>
+              <td>
+                <button (click)="askPackage(package.description)" class="btn btn-danger btn-sm">Translate</button>
+              </td>
+            </tr>
+          }
+        </tbody>
+    </table>
+    <select [(ngModel)]="selectedLanguage" class="form-control form-control-sm mb-2">
+        @for (lang of availableLanguages; track lang; let i = $index) {
+          <option [value]="lang">{{ lang }}</option>
+        }
+      </select>
+    <h3>Translate response(might take up to 10 seconds)</h3>
+    <h3>{{ response }}</h3>
+    <a routerLink="/" class="btn btn-primary">Back to Home</a>
+    </div>
+  </main>

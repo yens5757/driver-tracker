@@ -1,6 +1,8 @@
 # Project
 This is a full-stack website for tracking drivers and package deliveries. The website leverages Angular for the frontend, Socket.io for real-time communication between the client and server, Node.js and Express.js for the backend, and MongoDB as the database. Additionally, it integrates Google Gemini AI and Google Translate API for generating AI-driven results on estimated time of arrival (ETA) and translation.
 
+This repo is copied from gitlab: https://git.infotech.monash.edu/fit2095/fit2095-s2-2024/projects/alee0152/Assignment-3. Thus having no commits.
+
 # Installation
 To set up the project locally:
 Install dependencies:

@@ -1,8 +1,5 @@
 # Project
 This is a full-stack website for tracking drivers and package deliveries. The website leverages Angular for the frontend, Socket.io for real-time communication between the client and server, Node.js and Express.js for the backend, and MongoDB as the database. Additionally, it integrates Google Gemini AI and Google Translate API for generating AI-driven results on estimated time of arrival (ETA) and translation.
-
-This repo is copied from gitlab. Thus having no commits.
-
 # Installation
 To set up the project locally:
 Install dependencies:
@@ -20,6 +17,8 @@ TRANSLATE_API_KEY=your_api_key
 ```
 # Features
 The project provides driver management, including adding, updating, deleting, listing, and filtering drivers by department. It also supports package management, such as adding, updating, deleting, listing packages, and associating them with drivers. Google Gemini integration enables AI-driven ETA predictions, and a complete API supports all these features.
+![image](https://github.com/user-attachments/assets/ddfa1d5b-1b20-48b9-91b0-ec29a7c2a2b1)
+![image](https://github.com/user-attachments/assets/b3c89772-a77c-4336-9e1e-199cff81def9)
 # Navigation Bar
 The navigation bar provides quick access to key functionalities of the website. Here's what each link does:  
 Home: Redirects to the home page of the website.  

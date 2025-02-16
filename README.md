@@ -1,5 +1,5 @@
 # Project
-This is a full-stack website for tracking drivers and package deliveries. The website leverages Angular for the frontend, Socket.io for real-time communication between the client and server, Node.js and Express.js for the backend, and MongoDB as the database. Additionally, it integrates Google Gemini AI and Google Translate API for generating AI-driven results on estimated time of arrival (ETA) and translation.
+Driver Tracker is a full-stack website for tracking drivers and package deliveries. The website uses Angular for the frontend, Socket.io for real-time communication between the client and server, Node.js and Express.js for the backend, and MongoDB as the database. Additionally, it integrates Google Gemini AI and Google Translate API for generating AI-driven results on estimated time of arrival (ETA) and translation.
 # Installation
 To set up the project locally:
 Install dependencies:
